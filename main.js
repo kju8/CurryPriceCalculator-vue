@@ -25,6 +25,9 @@ let app = new Vue({
 					spiciness[this.selected.spiciness].price + 
 					sweetness[this.selected.sweetness].price +
 					toppingTotalPrice;
+		},
+		isAzurlane: function () {
+			return this.totalPrice > 900;
 		}
 	}
 })

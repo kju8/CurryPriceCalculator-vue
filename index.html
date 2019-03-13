@@ -52,7 +52,7 @@
 				</label>
 			</li>
 		</ul>
-		<div id="totalPrice">{{ totalPrice }}円</div>
+		<div id="totalPrice" v-bind:class="{ azurlane: isAzurlane }">{{ totalPrice }}円</div>
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
