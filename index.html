@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Curry Price Calculator</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<div id="app">
+		<div>ソースを選ぶ！</div>
+		<ul id="source">
+			<li v-for="(item, key) in source">
+				<label v-once>
+					<input type="radio" name="source" v-bind:value="key" v-model="selected.source">
+					<span>{{ item.name }} <small class="price">({{ item.price }}円)</small></span>
+				</label>
+			</li>
+		</ul>
+
+		<div>ライスの量を選ぶ！</div>
+		<div id="size">
+			<input type="number" name="size" v-model.number="selected.size" min="2">00g
+			<small class="price">({{ sizePrice }}円)</small>
+		</div>
+
+		<div>辛さを選ぶ！</div>
+		<ul id="spiciness">
+			<li v-for="(item, key) in spiciness">
+				<label>
+					<input type="radio" name="spiciness" v-bind:value="key" v-model="selected.spiciness">
+					<span>{{ item.name }} <small class="price">({{ item.price }}円)</small></span>
+				</label>
+			</li>
+		</ul>
+
+		<div>甘さを選ぶ！</div>
+		<ul id="sweetness">
+			<li v-for="(item, key) in sweetness">
+				<label>
+					<input type="radio" name="sweetness" v-bind:value="key" v-model="selected.sweetness">
+					<span>{{ item.name }} <small class="price">({{ item.price }}円)</small></span>
+				</label>
+			</li>
+		</ul>
+
+		<div>トッピングを選ぶ！</div>
+		<ul id="toppings">
+			<li v-for="(item, key) in toppings">
+				<label>
+					<input type="checkbox" name="toppings" v-bind:value="key" v-model="selected.toppings">
+					<span>{{ item.name }} <small class="price">({{ item.price }}円)</small></span>
+				</label>
+			</li>
+		</ul>
+		<div id="totalPrice">{{ totalPrice }}円</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="./data.js"></script>
+	<script src="./main.js"></script>
+</body>
+</html>

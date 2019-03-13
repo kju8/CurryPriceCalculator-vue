@@ -1,0 +1,75 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+#app{
+	display: grid;
+	margin: 10px;
+	grid-template-columns: 150px 1fr;
+	align-content:center;
+}
+
+#app > *{
+	border-right: 1px solid;
+	border-bottom: 1px solid;
+}
+
+#app > *:nth-child(odd){
+	border-left: 1px solid;
+	text-align: center;
+	padding: 2px;
+}
+
+#app > *:first-child,
+#app > *:nth-child(2){
+	border-top: 1px solid;
+}
+
+ul{
+	display: grid;
+	min-width: 900px;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	list-style: none;
+}
+
+li{
+	display: flex;
+	padding: 1px;
+	margin: 1px;
+}
+li > label{
+	display: flex;
+	flex-grow: 1;
+}
+li > label > span{
+	flex-grow: 1;
+	text-align: center;
+	vertical-align: middle;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+	display:none;
+}
+
+input[type="radio"] + span,
+input[type="checkbox"] + span{
+	border: 1px solid rgba(0,0,0,0.2);
+}
+
+input[type="radio"]:checked + span,
+input[type="checkbox"]:checked + span{
+	color:red;
+
+	border: 1px solid;
+}
+
+#size input{
+	text-align: right;
+}
+
+#totalPrice{
+	grid-column: span 2;
+}
