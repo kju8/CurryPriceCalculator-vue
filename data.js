@@ -1,10 +1,10 @@
-var source = [
+const dataSource = [
 		{"name": "ポークカレー", "price": 505, "default": true},
 		{"name": "甘口ポークカレー", "price": 505},
-		{"name": "ビーフカレー", "price": 629},
-		{"name": "ハッシュドビーフ", "price": 629}
+		{"name": "ビーフカレー", "price": 629, "disable": {"spiciness": ["甘口"]}},
+		{"name": "ハッシュドビーフ", "price": 629, "disable": {"spiciness": ["甘口"]}}
 	];
-var spiciness = [
+const dataSpiciness = [
 		{"name": "甘口", "price": 0},
 		{"name": "普通", "price": 0, "default": true},
 		{"name": "１辛", "price": 21},
@@ -18,7 +18,7 @@ var spiciness = [
 		{"name": "９辛", "price": 105},
 		{"name": "10辛", "price": 105}
 	];
-var sweetness = [
+const dataSweetness = [
 		{"name": "普通", "price": 0, "default": true},
 		{"name": "１甘", "price": 21},
 		{"name": "２甘", "price": 42},
@@ -26,7 +26,7 @@ var sweetness = [
 		{"name": "４甘", "price": 84},
 		{"name": "５甘", "price": 105}
 	];
-var toppings = [
+const dataToppings = [
 		{"name":"クリーミータルタルソース", "price":51, "tag":["other"]},
 		{"name":"ガーリック", "price":51, "tag":["other"]},
 		{"name":"半熟タマゴ", "price":72, "tag":["other"]},

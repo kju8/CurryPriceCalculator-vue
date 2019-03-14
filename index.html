@@ -27,7 +27,7 @@
 		<ul id="spiciness">
 			<li v-for="(item, key) in spiciness">
 				<label>
-					<input type="radio" name="spiciness" v-bind:value="key" v-model="selected.spiciness">
+					<input type="radio" name="spiciness" v-bind:value="key" v-model="selected.spiciness" v-bind:disabled="item.disabled">
 					<span>{{ item.name }} <small class="price">({{ item.price }}円)</small></span>
 				</label>
 			</li>

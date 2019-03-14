@@ -57,6 +57,7 @@ input[type="checkbox"]{
 input[type="radio"] + span,
 input[type="checkbox"] + span{
 	border: 1px solid rgba(0,0,0,0.2);
+	cursor: pointer;
 }
 
 input[type="radio"]:checked + span,
@@ -64,6 +65,12 @@ input[type="checkbox"]:checked + span{
 	color:red;
 
 	border: 1px solid;
+}
+
+input[type="radio"]:disabled + span,
+input[type="checkbox"]:disabled + span{
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
 #size input{
